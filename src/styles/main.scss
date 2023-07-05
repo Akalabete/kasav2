@@ -1,0 +1,13 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+@import "../components/footer/footer";
+@import "../components/headerCover/headercover";
+@import "../components/header/header";
+@import "../components/gallery/gallery";
+
+
+body {
+    margin: auto;
+    max-width: 1240px;
+    min-width: 340px;
+}

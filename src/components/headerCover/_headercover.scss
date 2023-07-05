@@ -1,0 +1,34 @@
+.header-img{
+    height: 150px;
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    background-image: url("../../assets/headercovergallery.png")
+    
+}
+.header-img p{
+    font-size: 48px;
+    font-family: 'Montserrat';
+    line-height:142.6% ;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-align: center;
+    color: $white;
+    position: absolute;
+    left:23%;
+    top: 5%;
+    z-index: 999;
+}
+
+.gallery-cover {
+    filter: brightness(60%);
+}
+.header-img img{
+    position: absolute;
+    top: -250%;
+    left: 0;
+    object-fit: contain;
+    
+}

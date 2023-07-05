@@ -1,0 +1,43 @@
+
+.qualities {
+    height: 400px;
+    margin: 60px auto;   
+    width: 70%;
+    overflow: auto;
+    .quality {
+      margin-top: 20px;
+      border-radius: 10px;
+      @include flex-column;
+      background-color: $light-grey;
+      color: $white;
+      position: relative;
+      .quality-content {
+        background-color: $primary;
+        @include flex-row;
+        align-items: center;
+        h3{
+          padding-left : 20px;
+        }
+        .fabout {
+          position: absolute;
+          right : 50px;
+        }
+      }
+      .expandable{
+        color: $black;
+        background-color: $light-grey;
+        border: none;
+        
+        p{
+           padding:0 20px;
+          }
+        }
+    }
+  }
+  
+  
+  
+  
+     
+  
+  

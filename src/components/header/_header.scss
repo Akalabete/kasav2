@@ -1,0 +1,56 @@
+.header {
+    margin: auto;
+    max-width: 1240px;
+  
+    height: 100px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    padding: 10px 20px;
+    z-index: 999;
+    
+ 
+  }
+  .header-container{
+    @include flex-row;
+    @include align;  
+  }  
+  
+  .nav {
+    display: flex;
+    min-width: 25%;
+    @include align;
+    margin-right: 30px;
+  }
+  
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+  }
+  
+  .nav li {
+
+    width: 100%;
+    margin-left: 10px;
+    
+  }
+
+  .nav a {
+    font-size: 24px;
+    font-family: 'Montserrat';
+    text-decoration: none;
+    color: $primary;
+    cursor: pointer;
+    padding-right: 20px;
+
+  }
+  
+
+ .active {
+    border-bottom: solid 5px $primary;
+  }
