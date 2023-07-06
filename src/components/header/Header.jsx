@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 import vectorA from '../../assets/vectorA.png';
 import house from '../../assets/house.png';
 import vectorK from '../../assets/vectorK.png';
@@ -8,18 +9,26 @@ import vectorS from '../../assets/vectorS.png';
 
 export default function Header({headerToRoot}) {
    
-    const handleClickOnNav = (event) => {
-        console.log(event.target); 
-        if(event.target ==="lien about"){
-            ajoute la classe active a apropos
-            et retirer a home
-            passe headerToRoot("about")
-            sinon ajoute la classe active a home et
-            retire a about
-            pass headerToRoot("home")
+    const homeLinkRef = useRef(null);
+    const aboutLinkRef = useRef(null);
+        
+     
+    const handleClickOnNav = (linkRef, linkId) => {
+        
+        
+        
+        homeLinkRef.current.classList.remove('active');
+        aboutLinkRef.current.classList.remove('active');
+        linkRef.current.classList.add('active');
+        
+        if (linkId === 'accueil') {
+            console.log('Le lien Accueil a été cliqué !');
+            headerToRoot("home")
+        } else if (linkId === 'about') {
+            console.log('Le lien À Propos a été cliqué !');
+            headerToRoot("about")
         }
-      };
-    headerToRoot(true)
+    };
     return (
         <div className="header-container" >
           <div className="header">
@@ -33,17 +42,22 @@ export default function Header({headerToRoot}) {
             <div className="nav">
             <nav>
                 <ul>
-                    <div className="home active">
+                    <div className="home">
                         <li>
                         
-                        <Link to="/" onClick={handleClickOnNav} >
+                        <Link to="/"
+                         ref={homeLinkRef}
+                         className="active"
+                         data-link-id="accueil"
+                         onClick={()=> handleClickOnNav(homeLinkRef, 'accueil')} >
                             Accueil
                         </Link>
                         </li>
                     </div>
                     <div className="about">
                         <li>
-                        <Link to="about"  onClick={handleClickOnNav}>
+                        <Link to="about" ref={aboutLinkRef}  data-link-id="a-propos" 
+                        onClick={()=> handleClickOnNav(aboutLinkRef, 'about')}>
                             A Propos
                         </Link>
                         </li>
@@ -53,5 +67,5 @@ export default function Header({headerToRoot}) {
             </div>
         </div>
     )
-  }
+}
 

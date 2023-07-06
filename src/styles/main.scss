@@ -1,10 +1,11 @@
 @import "../utils/mixins";
 @import "../utils/variables";
+@import "../utils/animation";
 @import "../components/footer/footer";
 @import "../components/headerCover/headercover";
 @import "../components/header/header";
 @import "../components/gallery/gallery";
-
+@import "../components/about/about";
 
 body {
     margin: auto;
