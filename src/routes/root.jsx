@@ -17,29 +17,9 @@ export default function Root() {
   return (
     <>
       <Header headerToRoot={headerToRoot} />
-      <HeaderCover />
+      <HeaderCover rootToHeaderCover={currentPage} />
       {currentPage === "about" ? <About /> : <Gallery />}
       <Footer />
     </>
   );
 }
-/*
-<>
-            <Header 
-                headerToRoot={headerToRoot}
-                rootToHeader={currentPage}
-                />
-            <HeaderCover rootToHeaderCover={currentPage}/>
-            { currentPage === "about" ? (
-              <>
-                
-                <About />
-              </>
-            ) : (
-              <>
-                <Gallery />
-              </>
-            )}
-            <Footer />
-          </>
-   */
