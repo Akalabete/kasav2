@@ -4,8 +4,10 @@
 @import "../components/footer/footer";
 @import "../components/headerCover/headercover";
 @import "../components/header/header";
-@import "../components/gallery/gallery";
-@import "../components/about/about";
+@import "../routes/about/about";
+@import "../routes/goodie/goodie";
+@import "../routes/gallery/gallery";
+
 
 body {
     margin: auto;

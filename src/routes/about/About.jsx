@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import datas from "../../data/qualities.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { ExpandableAnimation } from "../expandableAnimation/ExpandableAnimation";
+import { ExpandableAnimation } from "../../components/expandableAnimation/ExpandableAnimation";
 
 export default function About() {
   const [expandedDivs, setExpandedDivs] = useState([]);
