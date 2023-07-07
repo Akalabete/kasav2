@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
-  faChevronDown,
+
   faChevronUp,
   faChevronLeft,
   faChevronRight,
@@ -78,13 +78,11 @@ export default function Goodie({ rootToGoodie }) {
             onClick={() => handleScrollersClick(element)}
             >
             <div className="scroller-content">
-                <h3>{element}</h3>
+                <h3>{element=== 'equipments'? 'Equipements' : 'Description'}</h3>
                 <span>
-                {expandedDivs.includes(element) ? (
-                    <FontAwesomeIcon icon={faChevronUp} />
-                ) : (
-                    <FontAwesomeIcon icon={faChevronDown} />
-                )}
+                <FontAwesomeIcon 
+                                icon={faChevronUp}
+                                className={expandedDivs.includes(element)? 'rotate': 'reverse'} />
                 </span>
             </div>
             {element === "description" ? (

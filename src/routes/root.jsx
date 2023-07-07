@@ -18,7 +18,7 @@ export default function Root() {
     setViewedPic(childdata);
   }
 
-  console.log(currentPage);
+
 
   return (
     <>

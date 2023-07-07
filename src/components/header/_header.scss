@@ -1,10 +1,10 @@
 .header {
-    margin: auto;
+   
+    
     max-width: 1240px;
-  
     height: 100px;
-    width: 40%;
-    display: flex;
+    width: 100%;
+    @include flex-row;
     justify-content: space-between;
     align-items: center;
     background-color: $white;
@@ -14,8 +14,10 @@
  
   }
   .header-container{
-    @include flex-row;
-    @include align;  
+    max-width: 1240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
   }  
   
   .nav {

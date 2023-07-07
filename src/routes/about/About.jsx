@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import datas from "../../data/qualities.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { ExpandableAnimation } from "../../components/expandableAnimation/ExpandableAnimation";
 
 export default function About() {
@@ -38,11 +38,10 @@ export default function About() {
           <div className="quality-content">
             <h3>{element.name}</h3>
             <span>
-              {expandedDivs.includes(element.name) ? (
-                <FontAwesomeIcon icon={faChevronUp} className="fabout" />
-              ) : (
-                <FontAwesomeIcon icon={faChevronDown} className="fabout" />
-              )}
+              <FontAwesomeIcon 
+              icon={faChevronUp} 
+              className="fabout"
+              className={expandedDivs.includes(element.name) ? "rotate" : "reverse"} />
             </span>
           </div>
           <div

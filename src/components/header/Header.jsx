@@ -22,16 +22,16 @@ export default function Header({headerToRoot}) {
         linkRef.current.classList.add('active');
         
         if (linkId === 'accueil') {
-            console.log('Le lien Accueil a été cliqué !');
+            
             headerToRoot("home")
         } else if (linkId === 'about') {
-            console.log('Le lien À Propos a été cliqué !');
+            
             headerToRoot("about")
         }
     };
     return (
-        <div className="header-container" >
-          <div className="header">
+        <div className="header" >
+          <div className="header-logo">
                 <div className="vector-group">
                     <img src={vectorK} alt="K" className="vectorK" />
                     <img src={house} alt="maison en forme de A" className="house" />
@@ -39,31 +39,33 @@ export default function Header({headerToRoot}) {
                     <img src={vectorA} alt="A" className="vectorA" />
                 </div>
             </div>
-            <div className="nav">
-            <nav>
-                <ul>
-                    <div className="home">
-                        <li>
-                        
-                        <Link to="/"
-                         ref={homeLinkRef}
-                         className="active"
-                         data-link-id="accueil"
-                         onClick={()=> handleClickOnNav(homeLinkRef, 'accueil')} >
-                            Accueil
-                        </Link>
-                        </li>
-                    </div>
-                    <div className="about">
-                        <li>
-                        <Link to="about" ref={aboutLinkRef}  data-link-id="a-propos" 
-                        onClick={()=> handleClickOnNav(aboutLinkRef, 'about')}>
-                            A Propos
-                        </Link>
-                        </li>
-                    </div>
-                </ul>
-            </nav>
+            <div>
+                <div className="nav">
+                <nav>
+                    <ul>
+                        <div className="home">
+                            <li>
+                            
+                            <Link to="/"
+                            ref={homeLinkRef}
+                            className="active"
+                            data-link-id="accueil"
+                            onClick={()=> handleClickOnNav(homeLinkRef, 'accueil')} >
+                                Accueil
+                            </Link>
+                            </li>
+                        </div>
+                        <div className="about">
+                            <li>
+                            <Link to="about" ref={aboutLinkRef}  data-link-id="a-propos" 
+                            onClick={()=> handleClickOnNav(aboutLinkRef, 'about')}>
+                                A Propos
+                            </Link>
+                            </li>
+                        </div>
+                    </ul>
+                </nav>
+                </div>
             </div>
         </div>
     )
