@@ -48,6 +48,7 @@ export default function Header({headerToRoot}) {
                             
                             <Link to="/"
                             ref={homeLinkRef}
+                            
                             className="active"
                             data-link-id="accueil"
                             onClick={()=> handleClickOnNav(homeLinkRef, 'accueil')} >

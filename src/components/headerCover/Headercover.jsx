@@ -1,22 +1,24 @@
 import headercovergallery from "../../assets/headercovergallery.png"
 import headercoverabout from "../../assets/headercoverabout.png";
 
-
-export default function HeaderCover( { rootToHeaderCover }) {
+export default function HeaderCover({ rootToHeaderCover }) {
     return (
-        <div className="header-img">
-            {rootToHeaderCover=== 'about'?
-                (<img src={headercoverabout} alt="bandeau représentant une vallée en montagne" className="gallery-cover" />)
-            :(<>
-                <img src={headercovergallery}  alt="bandeau représentant une falaise et la mer" className="gallery-cover" />
-                <p>Chez vous, partout et ailleurs</p>
-            </>
-            ) }
-                    
-           
-               
-           
-        </div>
+      <div className="header-img">
+        {rootToHeaderCover === "about" ? (
+          <img src={headercoverabout} alt="Header Background" className="header-bg" />
+        ) : (
+          <>
+            <img src={headercovergallery} alt="Header Background" className="header-bg" />
+            <p>
+              Chez vous,
+              <span className="line-break">
+                <br />
+              </span>
+              partout et ailleurs
+            </p>
+          </>
+        )}
+      </div>
     );
-
-}
+  }
+  

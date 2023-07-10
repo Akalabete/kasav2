@@ -11,6 +11,7 @@
 
 body {
     margin: auto;
-    max-width: 1240px;
-    min-width: 320px;
+    @include max-width;
+    @include min-width;
+    padding: 0 1%;
 }

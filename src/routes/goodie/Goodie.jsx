@@ -56,8 +56,17 @@ export default function Goodie({ rootToGoodie }) {
           <p>{thisobject.location}</p>
         </div>
         <div className="productowner-info">
-          <p>{thisobject.host.name}</p>
-          <img src={thisobject.host.picture} alt="le propriétaire" className="src" />
+          <div className="name">
+            {thisobject.host.name.split(" ").map((namePart, index) => (
+                <p key={index}>
+                  {namePart}
+                  <br />
+                </p>
+            ))}
+          </div>
+          <div className="circle">
+            <img src={thisobject.host.picture} alt="le propriétaire" />
+          </div>
         </div>
       </div>
       <div className="tagstar-container">
@@ -117,7 +126,7 @@ function renderStars(rating) {
   const stars = [];
 
   for (let i = 0; i < totalStars; i++) {
-    let starColor = i < rating ? "#FF6060" : null;
+    let starColor = i < rating ? "#FF6060" : "lightgrey";
     stars.push(
       <div className="star" key={i}>
         <FontAwesomeIcon icon={faStar} style={{ color: starColor }} />

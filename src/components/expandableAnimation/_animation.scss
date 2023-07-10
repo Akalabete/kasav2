@@ -12,7 +12,7 @@
   animation-name: quality-appearance;
   animation-duration: 1000ms;
   animation-fill-mode: backwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.5s;
 }
 @keyframes expandable-appear {
     from {
@@ -26,12 +26,12 @@
   }
   
   .expandable, .scroller-expandable {
-    overflow: hidden;
+    overflow: none;
   }
   
   .expandable.appear, .scroller-expandable.appear {
     animation-name: expandable-appear;
-    animation-duration: 1.2s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
   }
   .rotate {

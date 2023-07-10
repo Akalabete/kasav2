@@ -6,22 +6,25 @@
     max-width: 1240px;
     width: 100%;
     height: 100%;
-    overflow:auto;
-    padding: 10px 20px;
+    overflow: none;
+   
     h2 {
+        max-width: 60%;
         color: $primary;
-        font-size: 36px;
-        margin: 0;
+        font-size: 24px;
+        margin: 10px 0;
     }
     .slider{
         overflow:hidden;
-        max-height: 400px;
+        height: 300px;
+        
         border-radius: 25px;
         position:relative;
+        
         img{
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
         .left-arrow{
             position: absolute;
@@ -39,14 +42,35 @@
         }
     }
     .infos {
-        @include flex-row;
-        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        height: 15%;
         .productowner-info{
             @include flex-row;
-            p {
-                color: $black;
+            position: absolute;
+            right: 0;
+            .name{
+                @include flex-column;
+                align-items: flex-end;
+                justify-content: space-around;
+                margin-right : 10px;
+                p{
+                    margin: 0;
+                }
             }
-            
+        }
+        .circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
         p{
             color: $primary;
@@ -54,18 +78,24 @@
     }
     .tagstar-container{
     
-        @include flex-row;
-        justify-content: space-between;
-        height: 25px;
+        @include flex-column;
+        @media screen and (min-width: $mid-width){
+            @include flex-row;
+            justify-content: space-between;
+            align-items: center;;
+        }
+        
         .tags{        
             @include flex-row;
+            margin-bottom : 20px;
             .tag{
                 display: flex;  
                 @include align; 
                 background-color:  $primary;
-                border-radius: 10px;
-                padding:0 15px;
+                @include border-radius-10;
+                padding: 0 10px;
                 margin: 5px;
+                height: 20px;
                 font-size: 14px;
                 p{
                     color: $white;
@@ -74,7 +104,7 @@
         }
         .stars{
             @include flex-row;
-            @include align;
+            
             font-size: 18px;
             
             .star{
@@ -83,22 +113,32 @@
         }
     }
     .scrollers {
-        @include flex-row;
-        justify-content: space-between;
-        align-items: center;    
-        width: 100%;
-        margin-top: 20px;        
+        @include flex-column;
+        
+        align-items: center; 
+        overflow: auto;   
+        width: 100%; 
+        margin-bottom: 100px; 
+        @media screen and (min-width: $mid-width) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start
+             
+          } 
         .description, .equipments { 
-            width : 40%;
+            @media screen and (min-width: $mid-width){
+                width: 40%;
+            }
+            width: 100%;
+            margin-top: 20px;
             background-color: $primary;
-            height: 30px;
-            align-items: center;
             border-radius: 10px; 
+            z-index: 2;
             .scroller-content {
                 @include flex-column;
                 align-items: flex-start;
                 position: relative; 
-                z-index:999;
+                
                 span {                
                     margin:0;
                     position: absolute;
@@ -118,12 +158,13 @@
                 
             }
             .scroller-expandable{
+                
                 margin-top: 5px;
-                padding-top: 20px;
                 padding-left: 20px;
                 flex-direction: column;
                 border: none;
-                border-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;;
                 color: $black;
                 background-color: $light-grey;
                 z-index: -1;
@@ -137,9 +178,6 @@
         }
     }
 }
-
-
-
 
 
 

@@ -40,7 +40,7 @@ export default function About() {
             <span>
               <FontAwesomeIcon 
               icon={faChevronUp} 
-              className="fabout"
+              
               className={expandedDivs.includes(element.name) ? "rotate" : "reverse"} />
             </span>
           </div>
