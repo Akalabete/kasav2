@@ -22,7 +22,7 @@ export default function Header({headerToRoot}) {
         linkRef.current.classList.add('active');
         
         if (linkId === 'accueil') {
-            console.log("clické")
+            
             headerToRoot("home")
         } else if (linkId === 'about') {
             
@@ -52,7 +52,7 @@ export default function Header({headerToRoot}) {
                             className="active"
                             data-link-id="accueil"
                             onClick={()=> handleClickOnNav(homeLinkRef, 'accueil')} >
-                                Accueil
+                                <span>Accueil</span>
                             </Link>
                             </li>
                         </div>
@@ -60,7 +60,7 @@ export default function Header({headerToRoot}) {
                             <li>
                             <Link to="about" ref={aboutLinkRef}  data-link-id="a-propos" 
                             onClick={()=> handleClickOnNav(aboutLinkRef, 'about')}>
-                                A Propos
+                               <span>A Propos</span>
                             </Link>
                             </li>
                         </div>
