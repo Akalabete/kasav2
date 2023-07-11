@@ -129,8 +129,10 @@
             @media screen and (min-width: $mid-width){
                 width: 40%;
             }
+            
             width: 100%;
             margin-top: 20px;
+            margin-right: 5px;
             background-color: $primary;
             border-radius: 10px; 
             z-index: 2;
@@ -168,12 +170,21 @@
                 color: $black;
                 background-color: $light-grey;
                 z-index: -1;
+                
                 p,li{
                     color : $primary;
                 }
                 li{
                     list-style: none;
                 }
+            }
+            .appear{
+                margin-right: -1px;
+                margin-left: -1px;
+                margin-bottom: -1px;
+    
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
             }
         }
     }

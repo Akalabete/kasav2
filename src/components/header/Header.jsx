@@ -22,7 +22,7 @@ export default function Header({headerToRoot}) {
         linkRef.current.classList.add('active');
         
         if (linkId === 'accueil') {
-            
+            console.log("clické")
             headerToRoot("home")
         } else if (linkId === 'about') {
             
