@@ -7,9 +7,11 @@
 @import "../routes/about/about";
 @import "../routes/goodie/goodie";
 @import "../routes/gallery/gallery";
-
+@import "../error-page";
 
 body {
+    max-width: 1240px;
+    
     margin: auto;
     @include max-width;
     @include min-width;

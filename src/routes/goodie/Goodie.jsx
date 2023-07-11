@@ -1,5 +1,8 @@
 import goodiesData from "../../data/logements.json";
-import { useState } from "react";
+import {  useState,
+          useRef,
+          useEffect,
+         } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -15,6 +18,9 @@ export default function Goodie({ rootToGoodie }) {
   const thisobject = thisarray.find((object) => object.id === rootToGoodie);
   const name = ["description", "equipments"];
   const [expandedDivs, setExpandedDivs] = useState([]);
+  const descriptionRef = useRef(null);
+  const equipmentsRef = useRef(null);
+
 
   const handleScrollersClick = (name) => {
     if (expandedDivs.includes(name)) {
@@ -38,6 +44,14 @@ export default function Goodie({ rootToGoodie }) {
       setCurrentPic(thisobject.pictures[previousIndex]);
     }
   };
+  useEffect(() => {
+    if (expandedDivs.includes("description")) {
+      descriptionRef.current.focus();
+    }
+    if (expandedDivs.includes("equipments")) {
+      equipmentsRef.current.focus();
+    }
+  }, [expandedDivs]);
 
   return (
     <div className="thisobject-container">
@@ -85,6 +99,7 @@ export default function Goodie({ rootToGoodie }) {
             key={element}
             className={`${expandedDivs.includes(element) ? "expanded" : ""} ${element}`}
             onClick={() => handleScrollersClick(element)}
+            ref={element === "description" ? descriptionRef : equipmentsRef}
             >
             <div className="scroller-content">
                 <h3>{element=== 'equipments'? 'Equipements' : 'Description'}</h3>
