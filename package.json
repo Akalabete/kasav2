@@ -30,7 +30,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "globals": {
+      "Redirect": true
+    }
   },
   "author": "@k@666",
   "license": "MIT",

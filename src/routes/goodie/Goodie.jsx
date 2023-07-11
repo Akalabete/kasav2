@@ -3,10 +3,10 @@ import {  useState,
           useRef,
           useEffect,
          } from "react";
+import ErrorPage from "../../error-page"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
-
   faChevronUp,
   faChevronLeft,
   faChevronRight,
@@ -52,7 +52,10 @@ export default function Goodie({ rootToGoodie }) {
       equipmentsRef.current.focus();
     }
   }, [expandedDivs]);
-
+ /* if (thisobject.length !== 0){ }else {
+    return
+    <ErrorPage />
+  }*/
   return (
     <div className="thisobject-container">
       <div className="slider">
@@ -135,6 +138,7 @@ export default function Goodie({ rootToGoodie }) {
     </div>
   );
 }
+
 
 function renderStars(rating) {
   const totalStars = 5;
