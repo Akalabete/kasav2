@@ -3,7 +3,7 @@ import {  useState,
           useRef,
           useEffect,
          } from "react";
-import ErrorPage from "../../error-page"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -13,6 +13,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { ExpandableAnimation } from "../../components/expandableAnimation/ExpandableAnimation";
 
+
+
 export default function Goodie({ rootToGoodie }) {
   const thisarray = Array.from(goodiesData);
   const thisobject = thisarray.find((object) => object.id === rootToGoodie);
@@ -20,7 +22,7 @@ export default function Goodie({ rootToGoodie }) {
   const [expandedDivs, setExpandedDivs] = useState([]);
   const descriptionRef = useRef(null);
   const equipmentsRef = useRef(null);
-
+ 
 
   const handleScrollersClick = (name) => {
     if (expandedDivs.includes(name)) {

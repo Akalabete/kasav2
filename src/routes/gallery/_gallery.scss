@@ -1,23 +1,24 @@
 .gallery-container{
-  margin-top: 2%;
+  margin-top: 1%;
   width: 100%;
-  max-height:80%;
+  height:70vh;
   background-color: $light-grey;
   border-radius: 25px;
-  @media screen and (max-width: 350px){
-    height:1000px;
+  @media screen and (min-width: 400px){
+    height: 65vh;
   }
-  @media screen and (max-width: 450px) {
-    height: 900px;
+  @media screen and (min-width: $mid-width){
+    height: 63vh;
   }
-  @media screen and (min-width: 450px){
-    height: 800px;
+  @media screen and (min-width: 1200px) {
+    height: 60vh;
   }
   .gallery-wrapper{
     margin: auto;
-    height:94%;
+    height:95%;
     width: 99%;
-    padding-top: 2%;
+    padding-top: 1%;
+    padding-bottom:1%;
     
     overflow: hidden;
     .gallery {
@@ -48,7 +49,7 @@
           
         }
         @media screen and (min-width: 750px){
-          max-width: 32%;
+          max-width: 28%;
           max-height: 48%;
         }
         h3 {

@@ -28,7 +28,8 @@ const router = createBrowserRouter([
       },
       {
         path: "gallery/:logementId",
-        element: <Goodie />
+        element: <Goodie />,
+        
       }
     ]
   },
