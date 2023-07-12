@@ -7,16 +7,13 @@ import vectorS from '../../assets/vectorS.png';
 
 
 
-export default function Header({headerToRoot}) {
+export default function Header({headerToRoot, resetError}) {
    
     const homeLinkRef = useRef(null);
     const aboutLinkRef = useRef(null);
-        
+
      
     const handleClickOnNav = (linkRef, linkId) => {
-        
-        
-        
         homeLinkRef.current.classList.remove('active');
         aboutLinkRef.current.classList.remove('active');
         linkRef.current.classList.add('active');
@@ -28,6 +25,7 @@ export default function Header({headerToRoot}) {
             
             headerToRoot("about")
         }
+        resetError();
     };
     return (
         <div className="header" >
@@ -46,12 +44,15 @@ export default function Header({headerToRoot}) {
                         <div className="home">
                             <li>
                             
-                            <Link to="/"
+                            <Link to="gallery/"
                             ref={homeLinkRef}
                             
                             className="active"
                             data-link-id="accueil"
-                            onClick={()=> handleClickOnNav(homeLinkRef, 'accueil')} >
+                            onClick={()=>{
+                                handleClickOnNav(homeLinkRef, 'accueil');
+                                
+                            }} >
                                 <span>Accueil</span>
                             </Link>
                             </li>
@@ -59,7 +60,10 @@ export default function Header({headerToRoot}) {
                         <div className="about">
                             <li>
                             <Link to="about" ref={aboutLinkRef}  data-link-id="a-propos" 
-                            onClick={()=> handleClickOnNav(aboutLinkRef, 'about')}>
+                            onClick={()=>{
+                                handleClickOnNav(aboutLinkRef, 'about');
+                                
+                                }}>
                                <span>A Propos</span>
                             </Link>
                             </li>
