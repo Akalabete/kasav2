@@ -9,9 +9,6 @@ import ErrorPage from "../error-page";
 import goodiesData from "../data/logements.json";
 
 export default function Root() {
-
-
-
   const url = window.location.href;
   const debut = url.indexOf("/gallery/") + "/gallery/".length;
   const fin = url.length;
@@ -23,33 +20,37 @@ export default function Root() {
   const isAboutPage = url === `${window.location.origin}/about`;
     
   const [rootToError, setRootToError] = useState(false);
-  const [resetError, setResetError] = useState(false);
-  
-  
+  const [isErrorReset, setIsErrorReset] = useState(false);
+  const resetError = () => {
+    setIsErrorReset(true);
+    setRootToError(false);
+  };
+  const handleResetError = () => {
+    setIsErrorReset(false);
+  };
+
+  const [currentPage, setCurrentPage] = useState("root");
+  const headerToRoot = (childdata) => {
+    setCurrentPage(childdata);
+    setIsErrorReset(false);
+    setViewedPic([])
+  };
+
+  const [viewedPic, setViewedPic] = useState([]);
+  const galleryToRoot = (childdata)=> {
+    setViewedPic(childdata);
+  }
+
   useEffect(() => {
-    if (urlExtracted.length > 0 && filterData.length === 0 && !isHomePage && !isAboutPage) {
+    if (urlExtracted.length > 0 &&
+        filterData.length === 0 && 
+        !isHomePage && 
+        !isAboutPage) {
       setRootToError(true);
     } else {
       setRootToError(false);
     }
   }, [urlExtracted, filterData, isHomePage, isAboutPage]);
-
-  const handleResetError = () => {
-    setResetError(true);
-    };
-
-  const [currentPage, setCurrentPage] = useState("root");
-  
-  const headerToRoot = (childdata) => {
-    setCurrentPage(childdata);
-    setResetError(false);
-    setViewedPic([])
-  };
-  const [viewedPic, setViewedPic] = useState([]);
-  const galleryToRoot = (childdata)=> {
-    
-    setViewedPic(childdata);
-  }
 
 if (rootToError) {
     return <ErrorPage resetError={resetError} handleResetError={handleResetError} rootToError={rootToError} />;

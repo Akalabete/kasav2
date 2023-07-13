@@ -25,7 +25,7 @@ export default function Header({headerToRoot, resetError}) {
             
             headerToRoot("about")
         }
-        resetError();
+        resetError(false);
     };
     return (
         <div className="header" >
