@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import vectorA from '../../assets/vectorA.png';
 import house from '../../assets/house.png';
 import vectorK from '../../assets/vectorK.png';
@@ -7,7 +7,7 @@ import vectorS from '../../assets/vectorS.png';
 
 
 
-export default function Header({headerToRoot, resetError}) {
+export default function Header({headerToRoot, resetError, isErrorPage}) {
    
     const homeLinkRef = useRef(null);
     const aboutLinkRef = useRef(null);
@@ -27,6 +27,12 @@ export default function Header({headerToRoot, resetError}) {
         }
         resetError(false);
     };
+    useEffect(() => {
+        if (isErrorPage) {
+          homeLinkRef.current.classList.remove('active');
+          aboutLinkRef.current.classList.remove('active');
+        }
+      }, [isErrorPage]);
     return (
         <div className="header" >
           <div className="header-logo">

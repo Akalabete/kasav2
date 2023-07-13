@@ -13,7 +13,7 @@ export default function ErrorPage({rootToError, handleResetError, headerToRoot})
   return (
       <>
 
-      <Header headerToRoot={headerToRoot} rootToError={rootToError} />
+      <Header headerToRoot={headerToRoot} rootToError={rootToError} isErrorPage={rootToError} />
       <div id="error-page">
         <h1>{errorStatus}</h1>
         <p className="error-p">Ooops, la page que vous demandez n'existe pas.</p>
