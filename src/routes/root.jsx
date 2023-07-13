@@ -43,7 +43,7 @@ export default function Root() {
   const [currentPage, setCurrentPage] = useState("root");
   const headerToRoot = (childdata) => {
     setCurrentPage(childdata);
-    setResetError(false);
+    setIsErrorReset(false);
     setViewedPic([])
   };
 
