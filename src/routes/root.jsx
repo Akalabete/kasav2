@@ -23,8 +23,12 @@ export default function Root() {
   const isAboutPage = url === `${window.location.origin}/about`;
     
   const [rootToError, setRootToError] = useState(false);
-  const [resetError, setResetError] = useState(false);
-  
+  const [isErrorReset, setIsErrorReset] = useState(false);
+
+  const resetError = () => {
+    setIsErrorReset(true);
+    setRootToError(false);
+  };
   
   useEffect(() => {
     if (urlExtracted.length > 0 && filterData.length === 0 && !isHomePage && !isAboutPage) {
@@ -35,14 +39,15 @@ export default function Root() {
   }, [urlExtracted, filterData, isHomePage, isAboutPage]);
 
   const handleResetError = () => {
-    setResetError(true);
-    };
+    setIsErrorReset(false);
+    setRootToError(false);
+  };
 
   const [currentPage, setCurrentPage] = useState("root");
   
   const headerToRoot = (childdata) => {
     setCurrentPage(childdata);
-    setResetError(false);
+    setIsErrorReset(false);
     setViewedPic([])
   };
   const [viewedPic, setViewedPic] = useState([]);

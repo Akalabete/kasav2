@@ -2,7 +2,7 @@ import { useRouteError, Link } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
-export default function ErrorPage({rootToError, handleResetError}) {
+export default function ErrorPage({rootToError, handleResetError, headerToRoot}) {
     
     const error = useRouteError();
     
@@ -13,7 +13,7 @@ export default function ErrorPage({rootToError, handleResetError}) {
   return (
       <>
 
-      <Header />
+      <Header headerToRoot={headerToRoot} rootToError={rootToError} />
       <div id="error-page">
         <h1>{errorStatus}</h1>
         <p className="error-p">Ooops, la page que vous demandez n'existe pas.</p>
