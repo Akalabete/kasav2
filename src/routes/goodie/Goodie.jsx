@@ -54,10 +54,7 @@ export default function Goodie({ rootToGoodie }) {
       equipmentsRef.current.focus();
     }
   }, [expandedDivs]);
- /* if (thisobject.length !== 0){ }else {
-    return
-    <ErrorPage />
-  }*/
+
   return (
     <div className="thisobject-container">
       <div className="slider">
