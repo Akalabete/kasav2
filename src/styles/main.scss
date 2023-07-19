@@ -8,10 +8,10 @@
 @import "../routes/goodie/goodie";
 @import "../routes/gallery/gallery";
 @import "../error-page";
+@import "../utils/typography";
 
-body {
-    max-width: 1240px;
-    
+
+body {  
     margin: auto;
     @include max-width;
     @include min-width;

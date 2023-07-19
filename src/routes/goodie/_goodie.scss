@@ -10,8 +10,6 @@
    
     h2 {
         max-width: 60%;
-        color: $primary;
-        font-size: 24px;
         margin: 10px 0;
     }
     .slider{
@@ -26,22 +24,17 @@
             height: 100%;
             object-fit: cover;
         }
-        .left-arrow{
+        .left-arrow, .right-arrow{
             position: absolute;
+            top: 50%;  
+        }
+        .left-arrow{
             left: 10px;
-            top: 50%;
-            color: $white;
-            font-size: 30px;
         }
         .right-arrow{
-            position: absolute;
             right: 10px;
-            top: 50%;
-            color: $white;
-            font-size: 30px;
         }
         .counter{
-            color: white;
             position: absolute;
             bottom: 2%;
             right:50%;
@@ -102,18 +95,11 @@
                 @include border-radius-10;
                 padding: 0 10px;
                 margin: 5px;
-                height: 20px;
-                font-size: 14px;
-                p{
-                    color: $white;
-                }
+                height: 20px;   
             }
         }
         .stars{
-            @include flex-row;
-            
-            font-size: 18px;
-            
+            @include flex-row;            
             .star{
                 margin: 0 10px;
             }
@@ -147,7 +133,6 @@
                 @include flex-column;
                 align-items: flex-start;
                 position: relative; 
-                
                 span {                
                     margin:0;
                     position: absolute;
@@ -157,17 +142,10 @@
                 }
                 h3 {
                     margin: 3px 0;
-                    color: $white;
-                    font-size: 18px;
-                    font-family: 'Montserrat';
-                    font-style: normal;
-                    font-weight: 500; 
                     padding-left: 10px;       
                 }
-                
             }
             .scroller-expandable{
-                
                 margin-top: 5px;
                 padding-left: 20px;
                 flex-direction: column;

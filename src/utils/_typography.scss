@@ -1,0 +1,79 @@
+
+.body{
+    font-family: 'Montserrat';
+}
+
+
+/* typo de goodie */
+.left-arrow, .right-arrow{
+    font-size: 30px;
+    color: $white;
+}
+.counter{
+    font-size: 18px;
+    color: $white;
+    font-weight: 500;
+}
+
+.thisobject-container h2{
+    color: $primary;
+    font-size: 24px;
+}
+
+.tag{
+    font-size: 14px;
+    p{
+        color: $white;
+    }
+}
+
+.stars {
+    font-size: 18px;
+}
+
+.scroller-content h3 {
+    color: $white;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500; 
+}
+
+
+/* typo nav */
+
+.nav a{
+    font-size: 24px;
+    color: $primary;
+}
+
+/* typo footer */
+
+.footer p {
+    font-size: 24px;
+}
+
+/* typo error page */
+
+#error-page {
+    h1,a,p {
+        color: $primary;
+    }
+    p{
+        
+        font-size: 24px;
+        margin-top: 0;
+    }
+    h1 {
+        font-size: 180px;
+        line-height: 0.7em;
+        @media screen and (min-width: $mid-width){
+            font-size: 240px;
+        }
+    }
+    a{
+        font-size: 12px;
+        @media screen and (min-width: $mid-width){
+            font-size: 14px;  
+        }
+    }
+}
