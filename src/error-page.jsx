@@ -6,7 +6,7 @@ export default function ErrorPage({rootToError, handleResetError, headerToRoot})
     
     const error = useRouteError();
     
-    const errorStatus = rootToError ? 304 : error.status;
+    const errorStatus = rootToError ? 404 : error.status;
 
   
   

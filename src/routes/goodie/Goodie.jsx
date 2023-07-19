@@ -54,7 +54,7 @@ export default function Goodie({ rootToGoodie }) {
       equipmentsRef.current.focus();
     }
   }, [expandedDivs]);
-
+  console.log(thisobject.pictures.indexOf(currentPic),thisobject.pictures.length)
   return (
     <div className="thisobject-container">
       <div className="slider">
@@ -64,6 +64,10 @@ export default function Goodie({ rootToGoodie }) {
         <img src={currentPic} alt="photos du bien proposé" />
         <div className="right-arrow" onClick={() => handleSlideClick(true)}>
           <FontAwesomeIcon icon={faChevronRight} />
+        </div>
+        <div className="counter">
+          
+          <p>{thisobject.pictures.indexOf(currentPic)+1} /{thisobject.pictures.length}</p>
         </div>
       </div>
       <div className="infos">

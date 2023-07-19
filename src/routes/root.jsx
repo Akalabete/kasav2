@@ -8,6 +8,8 @@ import Goodie from '../routes/goodie/Goodie';
 import ErrorPage from "../error-page";
 import goodiesData from "../data/logements.json";
 
+
+
 export default function Root() {
   const url = window.location.href;
   const debut = url.indexOf("/gallery/") + "/gallery/".length;
@@ -26,7 +28,10 @@ export default function Root() {
   };
   
   useEffect(() => {
-    if (urlExtracted.length > 0 && filterData.length === 0 && !isHomePage && !isAboutPage) {
+    if (urlExtracted.length > 0 
+      && filterData.length === 0 
+      && !isHomePage 
+      && !isAboutPage) {
       setRootToError(true);
     } else {
       setRootToError(false);
@@ -41,7 +46,7 @@ export default function Root() {
   const headerToRoot = (childdata) => {
     setCurrentPage(childdata);
     setRootToError(false);
-    setViewedPic([]);
+    setViewedPic([]); 
   };
 
   const [viewedPic, setViewedPic] = useState([]);
@@ -50,7 +55,7 @@ export default function Root() {
   }
 
   if (rootToError) {
-    return <ErrorPage resetError={resetError} handleResetError={handleResetError} rootToError={rootToError} />;
+    return <ErrorPage resetError={resetError} handleResetError={handleResetError} rootToError={rootToError} headerToRoot={headerToRoot} />;
   } else {
     return (
       <>

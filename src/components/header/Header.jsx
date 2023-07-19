@@ -11,8 +11,9 @@ export default function Header({headerToRoot, resetError, isErrorPage}) {
    
     const homeLinkRef = useRef(null);
     const aboutLinkRef = useRef(null);
+    
+    
 
-     
     const handleClickOnNav = (linkRef, linkId) => {
         homeLinkRef.current.classList.remove('active');
         aboutLinkRef.current.classList.remove('active');

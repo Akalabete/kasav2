@@ -40,6 +40,13 @@
             color: $white;
             font-size: 30px;
         }
+        .counter{
+            color: white;
+            position: absolute;
+            bottom: 2%;
+            right:50%;
+
+        }
     }
     .infos {
         display: flex;
