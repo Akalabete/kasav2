@@ -51,7 +51,7 @@ export default function Header({headerToRoot, resetError, isErrorPage}) {
                         <div className="home">
                             <li>
                             
-                            <Link to="gallery/"
+                            <Link to="/"
                             ref={homeLinkRef}
                             
                             className="active"

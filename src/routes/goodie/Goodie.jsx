@@ -1,9 +1,5 @@
 import goodiesData from "../../data/logements.json";
-import {  useState,
-          useRef,
-          useEffect,
-         } from "react";
-
+import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStar,
@@ -12,16 +8,17 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { ExpandableAnimation } from "../../components/expandableAnimation/ExpandableAnimation";
+import { useParams } from "react-router-dom"; 
 
-
-
-export default function Goodie({ rootToGoodie }) {
+export default function Goodie() {
+  const { logementId } = useParams();
   const thisarray = Array.from(goodiesData);
-  const thisobject = thisarray.find((object) => object.id === rootToGoodie);
+  const thisobject = thisarray.find((object) => object.id === logementId);
   const name = ["description", "equipments"];
   const [expandedDivs, setExpandedDivs] = useState([]);
   const descriptionRef = useRef(null);
   const equipmentsRef = useRef(null);
+;
  
 
   const handleScrollersClick = (name) => {
@@ -54,7 +51,7 @@ export default function Goodie({ rootToGoodie }) {
       equipmentsRef.current.focus();
     }
   }, [expandedDivs]);
-  
+
   return (
     <div className="thisobject-container">
       <div className="slider">
