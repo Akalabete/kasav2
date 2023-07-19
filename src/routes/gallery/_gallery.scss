@@ -5,13 +5,13 @@
   background-color: $light-grey;
   border-radius: 25px;
   @media screen and (min-width: 400px){
-    height: 65vh;
-  }
-  @media screen and (min-width: $mid-width){
     height: 63vh;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: $mid-width){
     height: 60vh;
+  }
+  @media screen and (min-width: 1200px) {
+    height: 59vh;
   }
   .gallery-wrapper{
     margin: auto;
@@ -50,7 +50,7 @@
         }
         @media screen and (min-width: 750px){
           max-width: 28%;
-          max-height: 48%;
+          max-height: 46%;
         }
         h3 {
           margin: 0;
